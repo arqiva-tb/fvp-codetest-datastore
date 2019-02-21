@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TVAMain xmlns:type="tva2:ExtendedTVAMainType" xmlns:mpeg7="urn:tva:mpeg7:2008" xmlns:fv="urn:fvc:metadata:2014-07" xmlns:tva="urn:tva:metadata:2012" xmlns:tva2="urn:tva:metadata:extended:2012" xmlns="urn:tva:metadata:2012" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xml:lang="en">
+  <ProgramDescription>
+    <ProgramInformationTable>
+      <ProgramInformation xml:lang="en" programId="crid://www.example.tv/V3H8BE8">
+        <BasicDescription xsi:type="tva2:ExtendedContentDescriptionType">
+          <ParentalGuidance>
+            <mpeg7:ParentalRating href="urn:fvc:metadata:cs:ContentRatingCS:2014-07:no_parental_controls"/>
+          </ParentalGuidance>
+          <Duration>PT0H25M0S</Duration>
+        </BasicDescription>
+        <DerivedFrom crid="crid://www.example.tv/programme/21034/C5210340016"/>
+      </ProgramInformation>
+    </ProgramInformationTable>
+    <GroupInformationTable>
+      <GroupInformation serviceIDRef="http://www.example.com/dtt/service/content_owning/example" groupId="crid://www.example.tv/programme/21034/C5210340016" xml:lang="en">
+        <GroupType value="programConcept" xsi:type="ProgramGroupTypeType"/>
+        <BasicDescription xsi:type="tva2:ExtendedContentDescriptionType">
+          <Title type="main" xml:lang="en"><![CDATA[Clutter & Red Flag Compilation]]></Title>
+          <Genre type="main" href="urn:fvc:metadata:cs:ContentSubjectCS:2014-07:3"/>
+          <RelatedMaterial xsi:type="tva2:ExtendedRelatedMaterialType">
+            <HowRelated href="urn:tva:metadata:cs:HowRelatedCS:2012:19"/>
+            <Format href="urn:mpeg:mpeg7:cs:FileFormatCS:2001:1"/>
+            <MediaLocator>
+              <MediaUri>http://edna.example.com/example/assets/images/default/example/1920x1080.jpg</MediaUri>
+            </MediaLocator>
+          </RelatedMaterial>
+        </BasicDescription>
+        <MemberOf crid="crid://www.example.tv/series/21034" xsi:type="MemberOfType"/>
+      </GroupInformation>
+      <GroupInformation serviceIDRef="http://www.example.com/dtt/service/content_owning/example" groupId="crid://www.example.tv/series/21034" xml:lang="en">
+        <GroupType value="series" xsi:type="ProgramGroupTypeType"/>
+        <BasicDescription xsi:type="tva2:ExtendedContentDescriptionType">
+          <Title type="main" xml:lang="en"><![CDATA[4]]></Title>
+          <Genre type="main" href="urn:fvc:metadata:cs:ContentSubjectCS:2014-07:3"/>
+          <RelatedMaterial xsi:type="tva2:ExtendedRelatedMaterialType">
+            <HowRelated href="urn:tva:metadata:cs:HowRelatedCS:2012:19"/>
+            <Format href="urn:mpeg:mpeg7:cs:FileFormatCS:2001:1"/>
+            <MediaLocator>
+              <MediaUri>http://edna.example.com/example/assets/images/default/example/1920x1080.jpg</MediaUri>
+            </MediaLocator>
+          </RelatedMaterial>
+        </BasicDescription>
+        <MemberOf crid="crid://www.example.tv/brand/3271776213" xsi:type="MemberOfType"/>
+      </GroupInformation>
+      <GroupInformation serviceIDRef="http://www.example.com/dtt/service/content_owning/example" groupId="crid://www.example.tv/brand/3271776213" xml:lang="en">
+        <GroupType value="brand" xsi:type="ProgramGroupTypeType"/>
+        <BasicDescription xsi:type="tva2:ExtendedContentDescriptionType">
+          <Title type="main" xml:lang="en"><![CDATA[***VISUALLY SIGNED*** House Doctor]]></Title>
+          <Genre type="main" href="urn:fvc:metadata:cs:ContentSubjectCS:2014-07:3"/>
+          <RelatedMaterial xsi:type="tva2:ExtendedRelatedMaterialType">
+            <HowRelated href="urn:tva:metadata:cs:HowRelatedCS:2012:19"/>
+            <Format href="urn:mpeg:mpeg7:cs:FileFormatCS:2001:1"/>
+            <MediaLocator>
+              <MediaUri>http://edna.example.com/example/assets/images/default/example/1920x1080.jpg</MediaUri>
+            </MediaLocator>
+          </RelatedMaterial>
+        </BasicDescription>
+      </GroupInformation>
+    </GroupInformationTable>
+    <ProgramLocationTable>
+      <BroadcastEvent serviceIDRef="http://www.example.com/vp/dtt/service/linear/8500" xml:lang="en">
+        <Program crid="crid://www.example.tv/V3H8BE8"/>
+        <ProgramURL>dvb://233a..2134;C62A</ProgramURL>
+        <InstanceMetadataId>imi:www.example.tv/8500_C5210340016_315396394_1</InstanceMetadataId>
+        <PublishedStartTime>2019-02-20T04:45:00Z</PublishedStartTime>
+        <PublishedDuration>PT0H25M0S</PublishedDuration>
+      </BroadcastEvent>
+      <BroadcastEvent serviceIDRef="http://www.example.com/vp/dtt/service/linear/17728" xml:lang="en">
+        <Program crid="crid://www.example.tv/V3H8BE8"/>
+        <ProgramURL>dvb://233a..4540;C62A</ProgramURL>
+        <InstanceMetadataId>imi:www.example.tv/17728_C5210340016_315396394_3</InstanceMetadataId>
+        <PublishedStartTime>2019-02-20T04:45:00Z</PublishedStartTime>
+        <PublishedDuration>PT0H25M0S</PublishedDuration>
+      </BroadcastEvent>
+    </ProgramLocationTable>
+  </ProgramDescription>
+</TVAMain>

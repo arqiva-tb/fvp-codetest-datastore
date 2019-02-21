@@ -1,0 +1,19 @@
+<TVAMain xsi:type="tva2:ExtendedTVAMainType" xml:lang="eng" xmlns:tva2="urn:tva:metadata:extended:2012" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bds="urn:tva:metadata:2004" xmlns:tva="urn:tva:metadata:2012" xmlns:mpeg7="urn:tva:mpeg7:2008" xmlns="urn:tva:metadata:2012">
+   <ProgramDescription>
+      <ProgramLocationTable>
+         <BroadcastEvent serviceIDRef="http://syndication.example.com/services/dtt/example">
+            <Program crid="crid://example.com/2-4774-0009"/>
+            <ProgramURL>dvb://233a..208A;8B68</ProgramURL>
+            <InstanceMetadataId>imi:example.com/2-4774-0009_8B68_example4</InstanceMetadataId>
+            <InstanceDescription>
+               <Genre href="urn:fvc:metadata:cs:PublicationTypeCS:2014-07:broadcast-canonical"/>
+               <AVAttributes/>
+               <OtherIdentifier authority="pcrid.freeview.co.uk">crid://www.example.com/1616602248</OtherIdentifier>
+            </InstanceDescription>
+            <PublishedStartTime>2019-02-19T20:00:00Z</PublishedStartTime>
+            <PublishedDuration>PT0H25M0S</PublishedDuration>
+            <Free value="true"/>
+         </BroadcastEvent>
+      </ProgramLocationTable>
+   </ProgramDescription>
+</TVAMain>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TVAMain xmlns:type="tva2:ExtendedTVAMainType" xmlns:mpeg7="urn:tva:mpeg7:2008" xmlns:fv="urn:fvc:metadata:2014-07" xmlns:tva="urn:tva:metadata:2012" xmlns:tva2="urn:tva:metadata:extended:2012" xmlns="urn:tva:metadata:2012" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xml:lang="en">
+  <ProgramDescription>
+    <ProgramInformationTable>
+      <ProgramInformation xml:lang="en" programId="crid://www.example.tv/V4277B8">
+        <BasicDescription xsi:type="tva2:ExtendedContentDescriptionType">
+          <ParentalGuidance>
+            <mpeg7:ParentalRating href="urn:fvc:metadata:cs:ContentRatingCS:2014-07:no_parental_controls"/>
+            <ExplanatoryText length="long"></ExplanatoryText>
+          </ParentalGuidance>
+          <Duration>PT0H10M0S</Duration>
+        </BasicDescription>
+        <DerivedFrom crid="crid://www.example.tv/programme/24556/C5245560004"/>
+      </ProgramInformation>
+    </ProgramInformationTable>
+    <GroupInformationTable>
+      <GroupInformation serviceIDRef="http://www.example.com/dtt/service/content_owning/example" groupId="crid://www.example.tv/programme/24556/C5245560004" xml:lang="en">
+        <GroupType value="programConcept" xsi:type="ProgramGroupTypeType"/>
+        <BasicDescription xsi:type="tva2:ExtendedContentDescriptionType">
+          <Title type="main" xml:lang="en"><![CDATA[Peanut Meets Cashew]]></Title>
+          <Synopsis length="short"><![CDATA[Peanut moves in with a family and meets her half-sister.]]></Synopsis>
+          <Synopsis length="medium"><![CDATA[It's an important day for Peanut, who is now 15 weeks old and moving in with her permanent family. She is also meeting her half-sister Cashew for the first time.]]></Synopsis>
+          <Synopsis length="long"><![CDATA[It's an important day for Peanut, who is now 15 weeks old and moving in with her permanent family. She is also meeting her half-sister Cashew for the first time.]]></Synopsis>
+          <Genre type="main" href="urn:fvc:metadata:cs:ContentSubjectCS:2014-07:5"/>
+          <RelatedMaterial xsi:type="tva2:ExtendedRelatedMaterialType">
+            <HowRelated href="urn:tva:metadata:cs:HowRelatedCS:2012:19"/>
+            <Format href="urn:mpeg:mpeg7:cs:FileFormatCS:2001:1"/>
+            <MediaLocator>
+              <MediaUri>http://edna.example.com/example/assets/images/episode/C5245560004/1920x1080.jpg</MediaUri>
+            </MediaLocator>
+          </RelatedMaterial>
+        </BasicDescription>
+        <MemberOf crid="crid://www.example.tv/series/24556" xsi:type="MemberOfType"/>
+      </GroupInformation>
+      <GroupInformation serviceIDRef="http://www.example.com/dtt/service/content_owning/example" groupId="crid://www.example.tv/series/24556" xml:lang="en">
+        <GroupType value="series" xsi:type="ProgramGroupTypeType"/>
+        <BasicDescription xsi:type="tva2:ExtendedContentDescriptionType">
+          <Title type="main" xml:lang="en"><![CDATA[1]]></Title>
+          <Genre type="main" href="urn:fvc:metadata:cs:ContentSubjectCS:2014-07:5"/>
+          <RelatedMaterial xsi:type="tva2:ExtendedRelatedMaterialType">
+            <HowRelated href="urn:tva:metadata:cs:HowRelatedCS:2012:19"/>
+            <Format href="urn:mpeg:mpeg7:cs:FileFormatCS:2001:1"/>
+            <MediaLocator>
+              <MediaUri>http://edna.example.com/example/assets/images/show/4212210734/1920x1080.jpg</MediaUri>
+            </MediaLocator>
+          </RelatedMaterial>
+        </BasicDescription>
+        <MemberOf crid="crid://www.example.tv/brand/4212210734" xsi:type="MemberOfType"/>
+      </GroupInformation>
+      <GroupInformation serviceIDRef="http://www.example.com/dtt/service/content_owning/example" groupId="crid://www.example.tv/brand/4212210734" xml:lang="en">
+        <GroupType value="brand" xsi:type="ProgramGroupTypeType"/>
+        <BasicDescription xsi:type="tva2:ExtendedContentDescriptionType">
+          <Title type="main" xml:lang="en"><![CDATA[The Secret Life of Kittens]]></Title>
+          <Synopsis length="short"><![CDATA[This captivating series reveals what it’s like to be a kitten from birth to 12 months.]]></Synopsis>
+          <Genre type="main" href="urn:fvc:metadata:cs:ContentSubjectCS:2014-07:5"/>
+          <RelatedMaterial xsi:type="tva2:ExtendedRelatedMaterialType">
+            <HowRelated href="urn:tva:metadata:cs:HowRelatedCS:2012:19"/>
+            <Format href="urn:mpeg:mpeg7:cs:FileFormatCS:2001:1"/>
+            <MediaLocator>
+              <MediaUri>http://edna.example.com/example/assets/images/show/4212210734/1920x1080.jpg</MediaUri>
+            </MediaLocator>
+          </RelatedMaterial>
+        </BasicDescription>
+      </GroupInformation>
+    </GroupInformationTable>
+    <ProgramLocationTable>
+      <BroadcastEvent serviceIDRef="http://www.example.com/vp/dtt/service/linear/8500" xml:lang="en">
+        <Program crid="crid://www.example.tv/V4277B8"/>
+        <ProgramURL>dvb://233a..2134;C59B</ProgramURL>
+        <InstanceMetadataId>imi:www.example.tv/8500_C5245560004_315400566_1</InstanceMetadataId>
+        <PublishedStartTime>2019-02-21T06:15:00Z</PublishedStartTime>
+        <PublishedDuration>PT0H10M0S</PublishedDuration>
+      </BroadcastEvent>
+      <BroadcastEvent serviceIDRef="http://www.example.com/vp/dtt/service/linear/17728" xml:lang="en">
+        <Program crid="crid://www.example.tv/V4277B8"/>
+        <ProgramURL>dvb://233a..4540;C59B</ProgramURL>
+        <InstanceMetadataId>imi:www.example.tv/17728_C5245560004_315400566_3</InstanceMetadataId>
+        <PublishedStartTime>2019-02-21T06:15:00Z</PublishedStartTime>
+        <PublishedDuration>PT0H10M0S</PublishedDuration>
+      </BroadcastEvent>
+      <OnDemandProgram serviceIDRef="http://www.example.com/application/ondemand/demand5" xml:lang="en">
+        <Program crid="crid://www.example.tv/V4277B8"/>
+        <ProgramURL contentType="application/vnd.dvb.ait+xml"><![CDATA[https://auth.example.com/freeviewplay/ait/C5245560004.xml]]></ProgramURL>
+        <InstanceMetadataId>imi:www.example.tv/request:C5245560004</InstanceMetadataId>
+        <InstanceDescription>
+          <Genre href="urn:fvc:metadata:cs:MediaAvailabilityCS:2014-07:media_available"/>
+          <AVAttributes>
+            <CaptioningAttributes>
+              <Coding href="urn:tva:metadata:cs:CaptionCodingFormatCS:2010:2.1"/>
+            </CaptioningAttributes>
+          </AVAttributes>
+        </InstanceDescription>
+        <PublishedDuration>PT0H10M0S</PublishedDuration>
+        <StartOfAvailability>2019-02-21T06:15:00Z</StartOfAvailability>
+        <EndOfAvailability>2019-05-06T05:20:00Z</EndOfAvailability>
+        <Free value="true"/>
+        <AuxiliaryURL contentType="application/vnd.dvb.ait+xml"><![CDATA[https://auth.example.com/freeviewplay/ait/template.xml]]></AuxiliaryURL>
+      </OnDemandProgram>
+    </ProgramLocationTable>
+  </ProgramDescription>
+</TVAMain>
