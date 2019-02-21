@@ -1,0 +1,47 @@
+service: fvp-mds-storage
+
+# You can pin your service to only deploy with a specific Serverless version
+# Check out our docs for more details
+# frameworkVersion: "=X.X.X"
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  region: eu-west-2
+
+  environment:
+    tableName: ${self:custom.tableName}
+
+plugins:
+  - serverless-plugin-typescript
+  - serverless-offline
+
+package:
+  exclude:
+    - "node_modules/**"
+    - "!node_modules/sax/**"
+    - "!node_modules/xml2js/**"
+    - "!node_modules/xmlbuilder/**"
+    - "src/**/*.ts"
+  include:
+    - "src/*"
+    - "src/**/*"
+
+functions:
+  onS3Put:
+    handler: src/lambda.onS3Put
+    events:
+      - s3:
+          bucket: ${self:service}-${self:custom.stage}-ingest-bucket
+          event: s3:ObjectCreated:*
+
+custom:
+  stage: ${opt:stage, self:provider.stage}
+  tableName: fvp-mds-storage-${self:custom.stage}-table
+  tableThroughputs:
+    prod: 5
+    default: 1
+  tableThroughput: ${self:custom.tableThroughputs.${self:custom.stage}, self:custom.tableThroughputs.default}
+
+resources:
+  - ${file(resources/dynamodb.yml)}

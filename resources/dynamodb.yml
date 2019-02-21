@@ -1,0 +1,30 @@
+Resources:
+
+  FvcMdsStorageTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: ${self:custom.tableName}
+
+      ProvisionedThroughput:
+        ReadCapacityUnits: ${self:custom.tableThroughput}
+        WriteCapacityUnits: ${self:custom.tableThroughput}
+
+      AttributeDefinitions:
+        - AttributeName: "pk"
+          AttributeType: "S"
+        - AttributeName: "sk"
+          AttributeType: "S"
+
+      KeySchema:
+        - AttributeName: "pk"
+          KeyType: "HASH"
+        - AttributeName: "sk"
+          KeyType: "RANGE"
+
+Outputs:
+  FvcMdsStorageTableArn:
+    Description: The ARN for the User's Table
+    Value:
+      "Fn::GetAtt": [ FvcMdsStorageTable, Arn ]
+    Export:
+      Name: ${self:service}:${self:custom.stage}:UsersTableArn
