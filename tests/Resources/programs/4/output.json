@@ -1,0 +1,108 @@
+{
+  "persisted": [
+    {
+      "pk": "dvb://233a..2134;C59B",
+      "sk": "BCAST_0a03_TVA",
+      "gsi1pk": "http://www.example.com/vp/dtt/service/linear/8500",
+      "gsiBucket": 1,
+      "gsi2sk": "http://edna.example.com/example/assets/images/episode/C5245560004/1920x1080.jpg",
+      "gsi3sk": "crid://www.example.tv/brand/4212210734#crid://www.example.tv/series/24556#crid://www.example.tv/programme/24556/C5245560004",
+      "gsi4sk": "1550729700",
+      "gsi5sk": "1550730300",
+      "titles": {
+        "LONG": "Peanut Meets Cashew"
+      },
+      "crids": {
+        "TVA": "crid://www.example.tv/V4277B8",
+        "DVB": "dvb://233a..2134;C59B"
+      },
+      "startTime": 1550729700,
+      "endTime": 1550730300
+    },
+    {
+      "pk": "dvb://233a..4540;C59B",
+      "sk": "BCAST_0a03_TVA",
+      "gsi1pk": "http://www.example.com/vp/dtt/service/linear/17728",
+      "gsiBucket": 1,
+      "gsi2sk": "http://edna.example.com/example/assets/images/episode/C5245560004/1920x1080.jpg",
+      "gsi3sk": "crid://www.example.tv/brand/4212210734#crid://www.example.tv/series/24556#crid://www.example.tv/programme/24556/C5245560004",
+      "gsi4sk": "1550729700",
+      "gsi5sk": "1550730300",
+      "titles": {
+        "LONG": "Peanut Meets Cashew"
+      },
+      "crids": {
+        "TVA": "crid://www.example.tv/V4277B8",
+        "DVB": "dvb://233a..4540;C59B"
+      },
+      "startTime": 1550729700,
+      "endTime": 1550730300
+    },
+    {
+      "pk": "crid://www.example.tv/V4277B8",
+      "sk": "ONDEMAND",
+      "gsi1pk": "http://www.example.com/application/ondemand/demand5",
+      "gsiBucket": 1,
+      "gsi2sk": "http://edna.example.com/example/assets/images/episode/C5245560004/1920x1080.jpg",
+      "gsi3sk": "crid://www.example.tv/brand/4212210734#crid://www.example.tv/series/24556#undefined",
+      "titles": {
+        "LONG": "Peanut Meets Cashew"
+      },
+      "crids": {
+        "TVA": "crid://www.example.tv/V4277B8"
+      },
+      "avAttribs": {
+        "CaptioningAttributes": [
+          {
+            "Coding": [
+              {
+                "$": {
+                  "href": "urn:tva:metadata:cs:CaptionCodingFormatCS:2010:2.1"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "launchUrls": {
+        "program": {
+          "href": "https://auth.example.com/freeviewplay/ait/C5245560004.xml",
+          "contentType": "application/vnd.dvb.ait+xml"
+        },
+        "template": {
+          "href": "https://auth.example.com/freeviewplay/ait/template.xml",
+          "contentType": "application/vnd.dvb.ait+xml"
+        }
+      },
+      "images": {
+        "DEFAULT": {
+          "type": "DEFAULT",
+          "key": "http://edna.example.com/example/assets/images/episode/C5245560004/1920x1080.jpg"
+        }
+      },
+      "startTime": 1550729700
+    },
+    {
+      "pk": "crid://www.example.tv/brand/4212210734",
+      "sk": "BRAND",
+      "gsiBucket": 1,
+      "gsi2sk": "http://edna.example.com/example/assets/images/episode/C5245560004/1920x1080.jpg",
+      "titles": {
+        "LONG": "Peanut Meets Cashew"
+      },
+      "synopses": {
+        "SHORT": "This captivating series reveals what it’s like to be a kitten from birth to 12 months."
+      }
+    },
+    {
+      "pk": "crid://www.example.tv/series/24556",
+      "sk": "SERIES",
+      "gsiBucket": 1,
+      "gsi2sk": "http://edna.example.com/example/assets/images/episode/C5245560004/1920x1080.jpg",
+      "titles": {
+        "LONG": "Peanut Meets Cashew"
+      },
+      "synopses": {}
+    }
+  ]
+}

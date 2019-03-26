@@ -15,81 +15,84 @@ before submission.
 * Maintain a logical and clear commit history
 * When you think you are ready, create a PR and request a review from @mrthehud
 
-### Prerequisites
+## Requirements
 
-* We expect you to either have prior experience with the Serverless framework,
-  or to be able to pick up what you need from the web.
-* You should not need any experience with TVA, but we do expect you to understand
-  XML, and also XSDs, which we use to validate content before processing, although
-  you do not need to for this test.
+### Implement the handler for the Schedules API event
 
+* Code should be clear, and easy to understand.
+* Entities should be strongly typed.
+* Make use of patterns where appropriate.
+* Comments should be included where appropriate to clear up any potential
+  uncertainties for a reader, though self documenting code is preferred.
+* Your logic should be thoroughly tested.
+* Code should be designed to minimise database calls, using all available
+  features of the schema. (see resources/dynamodb.yml)
+* You may spend as much or as little time on this exercise as you wish,
+  but we'll need your response within one week.
 
-## Overview
+### Schedules API
 
-The FVP MDS (metadata system) stores the metadata of programs being broadcast 
+This API is expected to expose details of programs that are scheduled
+to be broadcast in a window of 6 hours, beginning at the provided start
+time. It shall return the required data in json format.
+
+#### Query params:
+* start_time: int. This timestamp must be a multiple of 6 hours from 00:00 UTC
+                   e.g. <int> 2019-03-17T09:00:00+00:00
+                   Mandatory
+
+#### Response example:
+```
+{
+  success: true,
+  events: [
+    {
+      program_id: string (TVA Crid)
+      titles: ITitle[]
+      launchUrls: ILaunchUrl[]
+      images: IImage[]
+      startTime: Date<ISO 8601>
+      endTime: Date<ISO 8601>
+    },
+    ...
+  ]
+}
+```
+
+## Background
+
+The FVP MDS (metadata system) stores the metadata of programs being broadcast
 on TV. The data comes from content providers in the TVA (TV Anytime) format,
-and the data storage service is responsible for converting this to JSON and 
-storing it in DynamoDB.
+and the data storage service is responsible for converting this to JSON and
+storing it in DynamoDB, as well as providing APIs to abstract DynamoDB
+and expose the metadata to other components in the system.
+
+### Ingest
 
 This is achieved by providing a lambda which responds to certain events, fetches
 the content of the TVA payload (if applicable), converts it to JSON using xml2js,
 then writes a row to DynamoDB. The row contains certain specific attributes for
 the program, as defined below, as well as the entire JSON representation.
 
-There are two entry points for this lambda. One is via an HTTP PUT api,
-the other is by putting a file in an S3 Bucket.
+There are three entry points for this lambda.
+* HTTP POST
+  This is used to post new, or update existing, content into the system.
+* HTTP PUT
+  This is used to replicate payloads from other environments.
+* S3 API
+  This is an experimental API to pull content that is placed in an S3 bucket.
 
-### The TVA Format
+#### The TVA Format
+
 TVA is an XML representation of TV Program information. It can include information
-such as titles, images, details of broadcasts and more. The requirements below 
-should make clear all you need to know in order to successfully parse the 
+such as titles, images, details of broadcasts and more. The requirements below
+should make clear all you need to know in order to successfully parse the
 information required from the TVA.
 
-## Requirements
+#### Ingesting content for testing
 
-### Endpoints
-
-#### Implement the handler for the S3 PUT event
-
-* The serverless.yml file creates a bucket in your stack. This bucket is configured
-  to trigger the onS3Put handler exported from src/lambda.ts
-* The config should be modified to only trigger if an xml file is uploaded.
-
-#### Implement the handler for the HTTP PUT event
-
-* Add configuration to serverless.yml to allow for the contents of a file to be
-  sent via HTTP PUT.
-* The request must specify a content type of application/xml. Any other content
-  type should be rejected with an appropriate http response code.
-
-### Data
-
-Each payload will contain information pertinent to one program.
-A program may have any number of OnDemand or BroadcastEvents.
-
-If a payload does not contain a ProgramInformation element, then that program
-must already exist in the data store.
-
-The mappings described in `src/Datastore/Types.ts` should assist you in hydrating
-the correct properties with the correct data.
-
-The entities in `src/Tva/Types.ts` should reasonably describe the JSON representation of
-the TVA payloads.
-
-## Submission guidelines
-
-* Code should be clear, and easy to understand.
-* Make use of patterns where appropriate.
-* Comments should be included to clear up any potential uncertainties for a reader.
-* Your logic should be thoroughly tested, and able to handle all example payloads.
-* You may spend as much or as little time on this exercise as you wish.
-
-### Assessment
-
-* There is no right solution! Each submission will be assessed by us against
-  the guidelines above, and on it's own merit.
-* We may have questions about your choices, and discuss them with you at the
-  face to face interview.
-* We may also ask you to assess the submission of someone else as a PR exercise
-  in the face to face interview. The corollary of this is that your submission
-  may also be reviewed by another candidate after we've finished assessing it.
+The example content in `examples/*.xml` can be loaded to test your
+implementation, using the ingest API. For example:
+```
+$ curl -X POST https://<your stack url>/dev/api/transaction/ingest -d @tests/Resources/programs/1/input.xml
+```

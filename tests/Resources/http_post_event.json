@@ -1,0 +1,124 @@
+{
+  "resource": "/api/transaction/ingest",
+  "path": "/api/transaction/ingest",
+  "httpMethod": "POST",
+  "headers": {
+    "Accept": "*/*",
+    "Accept-Encoding": "gzip, deflate",
+    "Authorization": "Basic aW5nZXN0LWFycWl2YTp6b0syNkg1MUFCazcxdw==",
+    "cache-control": "no-cache",
+    "CloudFront-Forwarded-Proto": "https",
+    "CloudFront-Is-Desktop-Viewer": "true",
+    "CloudFront-Is-Mobile-Viewer": "false",
+    "CloudFront-Is-SmartTV-Viewer": "false",
+    "CloudFront-Is-Tablet-Viewer": "false",
+    "CloudFront-Viewer-Country": "GB",
+    "Content-Type": "text/xml",
+    "Host": "d9md9tr3i8.execute-api.eu-west-2.amazonaws.com",
+    "Postman-Token": "fc741373-544b-4923-b0d5-15f6ded31d58",
+    "User-Agent": "PostmanRuntime/7.6.0",
+    "Via": "1.1 37b010671d329179b4de819b0a4d4f15.cloudfront.net (CloudFront)",
+    "X-Amz-Cf-Id": "Lpquk38fsx60DufheUXdH5JbLZ5UwuHgYFXC2JIxphVGLVIHbQJR7A==",
+    "X-Amzn-Trace-Id": "Root=1-5c90bb10-eda9faea3a626da266e5d836",
+    "X-Forwarded-For": "87.249.93.106, 52.46.38.90",
+    "X-Forwarded-Port": "443",
+    "X-Forwarded-Proto": "https"
+  },
+  "multiValueHeaders": {
+    "Accept": [
+      "*/*"
+    ],
+    "Accept-Encoding": [
+      "gzip, deflate"
+    ],
+    "Authorization": [
+      "Basic aW5nZXN0LWFycWl2YTp6b0syNkg1MUFCazcxdw=="
+    ],
+    "cache-control": [
+      "no-cache"
+    ],
+    "CloudFront-Forwarded-Proto": [
+      "https"
+    ],
+    "CloudFront-Is-Desktop-Viewer": [
+      "true"
+    ],
+    "CloudFront-Is-Mobile-Viewer": [
+      "false"
+    ],
+    "CloudFront-Is-SmartTV-Viewer": [
+      "false"
+    ],
+    "CloudFront-Is-Tablet-Viewer": [
+      "false"
+    ],
+    "CloudFront-Viewer-Country": [
+      "GB"
+    ],
+    "Content-Type": [
+      "text/xml"
+    ],
+    "Host": [
+      "d9md9tr3i8.execute-api.eu-west-2.amazonaws.com"
+    ],
+    "Postman-Token": [
+      "fc741373-544b-4923-b0d5-15f6ded31d58"
+    ],
+    "User-Agent": [
+      "PostmanRuntime/7.6.0"
+    ],
+    "Via": [
+      "1.1 37b010671d329179b4de819b0a4d4f15.cloudfront.net (CloudFront)"
+    ],
+    "X-Amz-Cf-Id": [
+      "Lpquk38fsx60DufheUXdH5JbLZ5UwuHgYFXC2JIxphVGLVIHbQJR7A=="
+    ],
+    "X-Amzn-Trace-Id": [
+      "Root=1-5c90bb10-eda9faea3a626da266e5d836"
+    ],
+    "X-Forwarded-For": [
+      "87.249.93.106, 52.46.38.90"
+    ],
+    "X-Forwarded-Port": [
+      "443"
+    ],
+    "X-Forwarded-Proto": [
+      "https"
+    ]
+  },
+  "queryStringParameters": null,
+  "multiValueQueryStringParameters": null,
+  "pathParameters": null,
+  "stageVariables": null,
+  "requestContext": {
+    "resourceId": "od7o7t",
+    "resourcePath": "/api/transaction/ingest",
+    "httpMethod": "POST",
+    "extendedRequestId": "WyIqhG53rPEFSQg=",
+    "requestTime": "19/Mar/2019:09:49:04 +0000",
+    "path": "/md/api/transaction/ingest",
+    "accountId": "950825987512",
+    "protocol": "HTTP/1.1",
+    "stage": "md",
+    "domainPrefix": "d9md9tr3i8",
+    "requestTimeEpoch": 1552988944186,
+    "requestId": "3b1662e9-4a2c-11e9-b846-0da14e2ab70c",
+    "identity": {
+      "cognitoIdentityPoolId": null,
+      "accountId": null,
+      "cognitoIdentityId": null,
+      "caller": null,
+      "sourceIp": "87.249.93.106",
+      "accessKey": null,
+      "cognitoAuthenticationType": null,
+      "cognitoAuthenticationProvider": null,
+      "userArn": null,
+      "userAgent": "PostmanRuntime/7.6.0",
+      "user": null
+    },
+    "domainName": "d9md9tr3i8.execute-api.eu-west-2.amazonaws.com",
+    "apiId": "d9md9tr3i8"
+  },
+  "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<TVAMain xmlns=\"urn:tva:metadata:2012\" xmlns:tva2=\"urn:tva:metadata:extended:2012\" xmlns:mpeg7=\"urn:tva:mpeg7:2008\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xml:lang=\"en\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\n  <ProgramDescription>\n    <ProgramInformationTable>\n      <ProgramInformation xml:lang=\"en\" programId=\"crid://bbc.co.uk/nitro/episode/b0bp6kdv\">\n        <BasicDescription xsi:type=\"tva2:ExtendedContentDescriptionType\">\n          <Title type=\"main\">Rip Off Britain</Title>\n          <Title type=\"secondary\">2018 Live: Episode 3</Title>\n        </BasicDescription>\n        <DerivedFrom crid=\"crid://www.bbc.co.uk/nitro/programme/b0bp6kdv\"/>\n      </ProgramInformation>\n    </ProgramInformationTable>\n    <GroupInformationTable xml:lang=\"en\">\n      <GroupInformation xml:lang=\"en\" serviceIDRef=\"http://www.bbc.co.uk/nitro/service/content_owning/bbc_one\" groupId=\"crid://www.bbc.co.uk/nitro/programme/b0bp6kdv\">\n        <GroupType xsi:type=\"ProgramGroupTypeType\" value=\"programConcept\"/>\n        <BasicDescription xsi:type=\"tva2:ExtendedContentDescriptionType\">\n          <Title type=\"main\">Rip Off Britain</Title>\n          <Synopsis length=\"short\">A family's heartbreaking battle to regain control of precious images of a lost loved.</Synopsis>\n          <Synopsis length=\"medium\">Julia Somerville, Angela Rippon and Gloria Hunniford hear about a family's heartbreaking battle to regain control of precious images of a lost loved one.</Synopsis>\n          <Synopsis length=\"long\">Julia Somerville, Angela Rippon and Gloria Hunniford investigate more of the consumer stories making news, tackle more problems on the spot and catch up with cases they've explored in the past. A family's heartbreaking battle to regain control of the precious images of a lost loved one raises a big question millions of people haven't stopped to think about - who owns the digital images now increasingly stored online? Plus why where someone lives can play such a big part in the cost of fuel prices.</Synopsis>\n          <Genre href=\"urn:bbc:bbcgenres:2010:100005\" type=\"main\"/>\n          <CreditsList>\n            <CreditsItem role=\"urn:tva:metadata:cs:TVARoleCS:2010:AD6\">\n              <PersonName>\n                <mpeg7:GivenName>Gloria</mpeg7:GivenName>\n                <mpeg7:FamilyName>Hunniford</mpeg7:FamilyName>\n              </PersonName>\n            </CreditsItem>\n            <CreditsItem role=\"urn:tva:metadata:cs:TVARoleCS:2010:AD6\">\n              <PersonName>\n                <mpeg7:GivenName>Angela</mpeg7:GivenName>\n                <mpeg7:FamilyName>Rippon</mpeg7:FamilyName>\n              </PersonName>\n            </CreditsItem>\n            <CreditsItem role=\"urn:tva:metadata:cs:TVARoleCS:2010:AD6\">\n              <PersonName>\n                <mpeg7:GivenName>Julia</mpeg7:GivenName>\n                <mpeg7:FamilyName>Somerville</mpeg7:FamilyName>\n              </PersonName>\n            </CreditsItem>\n            <CreditsItem role=\"urn:mpeg:mpeg7:cs:RoleCS:2001:EXECUTIVE-PRODUCER\">\n              <PersonName>\n                <mpeg7:GivenName>Rob</mpeg7:GivenName>\n                <mpeg7:FamilyName>Unsworth</mpeg7:FamilyName>\n              </PersonName>\n            </CreditsItem>\n            <CreditsItem role=\"urn:tva:metadata:cs:TVARoleCS:2010:AD13\">\n              <PersonName>\n                <mpeg7:GivenName>Sherry</mpeg7:GivenName>\n                <mpeg7:FamilyName>Knight</mpeg7:FamilyName>\n              </PersonName>\n            </CreditsItem>\n          </CreditsList>\n          <RelatedMaterial xsi:type=\"tva2:ExtendedRelatedMaterialType\">\n            <HowRelated href=\"urn:tva:metadata:cs:HowRelatedCS:2012:19\"/>\n            <Format href=\"urn:mpeg:mpeg7:cs:FileFormatCS:2001:1\"/>\n            <MediaLocator>\n              <MediaUri>http://ichef.bbci.co.uk/images/ic/1024x576/p064ld86.jpg</MediaUri>\n            </MediaLocator>\n          </RelatedMaterial>\n        </BasicDescription>\n        <MemberOf xsi:type=\"MemberOfType\" index=\"3\" crid=\"crid://www.bbc.co.uk/nitro/series/b0bp6thy\"/>\n      </GroupInformation>\n      <GroupInformation xml:lang=\"en\" serviceIDRef=\"http://www.bbc.co.uk/nitro/service/content_owning/bbc_one\" groupId=\"crid://www.bbc.co.uk/nitro/brand/b00wck32\">\n        <GroupType xsi:type=\"ProgramGroupTypeType\" value=\"brand\"/>\n        <BasicDescription xsi:type=\"tva2:ExtendedContentDescriptionType\">\n          <Title type=\"main\">Rip Off Britain</Title>\n          <Synopsis length=\"short\">The Rip Off Britain team is ready to tackle the issues you feel affect you the most.</Synopsis>\n          <Synopsis length=\"medium\">The Rip Off Britain team is ready to tackle the issues that most matter to you - from bills and bad customer service, to holidays and food.</Synopsis>\n          <Synopsis length=\"long\"/>\n          <Genre href=\"urn:bbc:bbcgenres:2010:100005\" type=\"main\"/>\n          <RelatedMaterial xsi:type=\"tva2:ExtendedRelatedMaterialType\">\n            <HowRelated href=\"urn:tva:metadata:cs:HowRelatedCS:2012:19\"/>\n            <Format href=\"urn:mpeg:mpeg7:cs:FileFormatCS:2001:1\"/>\n            <MediaLocator>\n              <MediaUri>http://ichef.bbci.co.uk/images/ic/1024x576/p064ld86.jpg</MediaUri>\n            </MediaLocator>\n          </RelatedMaterial>\n        </BasicDescription>\n      </GroupInformation>\n      <GroupInformation xml:lang=\"en\" serviceIDRef=\"http://www.bbc.co.uk/nitro/service/content_owning/bbc_one\" groupId=\"crid://www.bbc.co.uk/nitro/series/b0bp6thy\">\n        <GroupType xsi:type=\"ProgramGroupTypeType\" value=\"series\"/>\n        <BasicDescription xsi:type=\"tva2:ExtendedContentDescriptionType\">\n          <Title type=\"main\">2018 Live</Title>\n          <Synopsis length=\"short\">The team share consumer advice in a week of live programmes.</Synopsis>\n          <Synopsis length=\"medium\">Angela Rippon, Gloria Hunniford and Julia Somerville expose rip-offs and share consumer advice in a week of live programmes.</Synopsis>\n          <Synopsis length=\"long\"/>\n          <Genre href=\"urn:bbc:bbcgenres:2010:100005\" type=\"main\"/>\n          <RelatedMaterial xsi:type=\"tva2:ExtendedRelatedMaterialType\">\n            <HowRelated href=\"urn:tva:metadata:cs:HowRelatedCS:2012:19\"/>\n            <Format href=\"urn:mpeg:mpeg7:cs:FileFormatCS:2001:1\"/>\n            <MediaLocator>\n              <MediaUri>http://ichef.bbci.co.uk/images/ic/1024x576/p064ld86.jpg</MediaUri>\n            </MediaLocator>\n          </RelatedMaterial>\n        </BasicDescription>\n        <MemberOf xsi:type=\"MemberOfType\" index=\"26\" crid=\"crid://www.bbc.co.uk/nitro/brand/b00wck32\"/>\n      </GroupInformation>\n    </GroupInformationTable>\n    <ProgramLocationTable>\n      <BroadcastEvent serviceIDRef=\"4170\">\n        <Program crid=\"crid://bbc.co.uk/nitro/episode/b0bp6kdv\"/>\n        <ProgramURL><![CDATA[dvb://233A..104A;EC6E]]></ProgramURL>\n        <InstanceMetadataId>imi:b0bp6kdq.imi:bds.tv/780600910_104A_EC6E</InstanceMetadataId>\n        <InstanceDescription>\n          <Genre href=\"urn:fvc:metadata:cs:PublicationTypeCS:2014-07:broadcast-canonical\" type=\"other\"/>\n          <AVAttributes>\n            <AudioAttributes>\n              <MixType href=\"urn:mpeg:mpeg7:cs:AudioPresentationCS:2001:3\"/>\n              <AudioLanguage purpose=\"urn:tva:metadata:cs:AudioPurposeCS:2007:6\">en</AudioLanguage>\n            </AudioAttributes>\n          </AVAttributes>\n          <OtherIdentifier authority=\"pcrid.freeview.co.uk\">crid://fp.bbc.co.uk/23VPOD</OtherIdentifier>\n          <OtherIdentifier authority=\"scrid.freeview.co.uk\">crid://fp.bbc.co.uk/P6UIE5</OtherIdentifier>\n        </InstanceDescription>\n        <PublishedStartTime>2018-10-17T08:15:00Z</PublishedStartTime>\n        <PublishedDuration>PT45M</PublishedDuration>\n      </BroadcastEvent>\n      <OnDemandProgram serviceIDRef=\"http://www.bbc.co.uk/nitro/service/ondemand/iplayer\">\n        <Program crid=\"crid://bbc.co.uk/nitro/episode/b0bp6kdv\"/>\n        <ProgramURL contentType=\"application/vnd.dvb.ait+xml\"><![CDATA[https://www.live.bbctvapps.co.uk/tap/iplayer/ait/launch/iplayer.aitx?deeplink=tv/playback/b0bp6kdv]]></ProgramURL>\n        <InstanceMetadataId>imi:bbc.co.uk/b0bp6kdv</InstanceMetadataId>\n        <InstanceDescription>\n          <Genre href=\"urn:fvc:metadata:cs:FEPGAvailabilityCS:2014-10:fepg_available\" type=\"other\"/>\n          <Genre href=\"urn:fvc:metadata:cs:MediaAvailabilityCS:2014-07:media_unavailable\" type=\"other\"/>\n          <AVAttributes>\n            <AudioAttributes>\n              <MixType href=\"urn:mpeg:mpeg7:cs:AudioPresentationCS:2001:3\"/>\n              <AudioLanguage purpose=\"urn:tva:metadata:cs:AudioPurposeCS:2007:6\">en</AudioLanguage>\n            </AudioAttributes>\n            <VideoAttributes>\n              <HorizontalSize>576</HorizontalSize>\n              <VerticalSize>512</VerticalSize>\n              <AspectRatio>16:9</AspectRatio>\n            </VideoAttributes>\n          </AVAttributes>\n        </InstanceDescription>\n        <PublishedDuration>PT45M</PublishedDuration>\n        <StartOfAvailability>2018-10-17T09:00:00Z</StartOfAvailability>\n        <EndOfAvailability>2018-11-16T09:00:00Z</EndOfAvailability>\n        <Free value=\"true\"/>\n        <AuxiliaryURL contentType=\"application/vnd.dvb.ait+xml\">https://www.live.bbctvapps.co.uk/tap/iplayer/ait/launch/iplayer.aitx</AuxiliaryURL>\n      </OnDemandProgram>\n    </ProgramLocationTable>\n  </ProgramDescription>\n</TVAMain>\n",
+  "isBase64Encoded": false
+}

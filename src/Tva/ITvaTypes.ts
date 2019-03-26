@@ -46,16 +46,20 @@ export interface IBasicDescription {
     $: IXsiTypeAttribute;
     ParentalGuidance: IParentalGuidance[];
     Duration: IDuration[];
-    Title: ITitle[];
+    Title: Array<ITitle | string>;
     Genre: IGenre[];
     RelatedMaterial: IRelatedMaterial[];
-
+    Synopsis: ISynopsis[];
 }
 
 export interface ITitle {
-    /** @var The value of the title */
-    _: string;
+    _?: string;
     $: ITypeAttribute & IXmlLangAttribute;
+}
+
+export interface ISynopsis {
+    _?: string;
+    $: ILengthAttribute;
 }
 
 export interface IGenre {
@@ -136,10 +140,54 @@ export interface IBroadcastEvent {
 }
 export interface IOnDemandProgram {
     $: IServiceIdRefAttribute & IXmlLangAttribute;
-    // TODO
+    Program: IProgram[];
+    ProgramURL: IProgramURL[];
+    InstanceMetadataId: IInstanceMetadataId[];
+    InstanceDescription: IInstanceDescription[];
+    PublishedDuration: string[];
+    StartOfAvailability: string[];
+    EndOfAvailability: string[];
+    Free: IFree[];
+    AuxiliaryURL: IAuxiliaryURL[];
 }
 export interface IProgram {
     $: ICridAttribute;
+}
+export interface IProgramURL {
+    $: IContentTypeAttribute;
+    _: string;
+}
+export interface IAuxiliaryURL {
+    $: IContentTypeAttribute;
+    _: string;
+}
+export type IInstanceMetadataId = string;
+export interface IInstanceDescription {
+    Genre: IGenre[];
+    AVAttributes: IAvAttributes[];
+}
+export interface IFree {
+    $: IValueAttribute;
+}
+export interface IAvAttributes {
+    AudioAttributes: IAudioAttributes[];
+    VideoAttributes: IVideoAttributes[];
+}
+export interface IAudioAttributes {
+    MixType: IMixType[];
+    AudioLanguage: IAudioLanguage[];
+}
+export interface IVideoAttributes {
+    HorizontalSize: string[];
+    VerticalSize: string[];
+    AspectRatio: string[];
+}
+export interface IMixType {
+    $: IHrefAttribute;
+}
+export interface IAudioLanguage {
+    $: { purpose: string };
+    _: string;
 }
 
 // General bits
@@ -157,6 +205,9 @@ export interface ITypeAttribute {
 }
 export interface IValueAttribute {
     value: string;
+}
+export interface ILengthAttribute {
+    length: string;
 }
 export interface IContentTypeAttribute {
     contentType: string;

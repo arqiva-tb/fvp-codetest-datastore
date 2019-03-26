@@ -1,6 +1,6 @@
 Resources:
 
-  FvcMdsStorageTable:
+  FvcDataStoreTable:
     Type: AWS::DynamoDB::Table
     Properties:
       TableName: ${self:custom.tableName}
@@ -9,10 +9,31 @@ Resources:
         ReadCapacityUnits: ${self:custom.tableThroughput}
         WriteCapacityUnits: ${self:custom.tableThroughput}
 
+      # Only the general purpose key attributes are listed here.
+      # See src/Parser/* and tests/Resources/programs/* for details of
+      # other attributes ingested.
       AttributeDefinitions:
         - AttributeName: "pk"
           AttributeType: "S"
         - AttributeName: "sk"
+          AttributeType: "S"
+
+        - AttributeName: "gsi1pk"
+          AttributeType: "S"
+
+        # Everything is ingested into bucket 1 at the moment
+        - AttributeName: "gsiBucket"
+          AttributeType: "N"
+
+        - AttributeName: "gsi2sk"
+          AttributeType: "S"
+        - AttributeName: "gsi3sk"
+          AttributeType: "S"
+        - AttributeName: "gsi4sk"
+          AttributeType: "S"
+        - AttributeName: "gsi5sk"
+          AttributeType: "S"
+        - AttributeName: "gsi6sk"
           AttributeType: "S"
 
       KeySchema:
@@ -21,10 +42,96 @@ Resources:
         - AttributeName: "sk"
           KeyType: "RANGE"
 
+      GlobalSecondaryIndexes:
+
+        # Use cases
+        # - Find all broadcast content for a given service ID
+        # - Find all ondemand content for a given service ID
+        # - Find all brands / series for a given service ID
+        - IndexName: "GS1"
+          KeySchema:
+            - AttributeName: "gsi1pk"
+              KeyType: "HASH"
+            - AttributeName: "sk"
+              KeyType: "RANGE"
+          Projection:
+            ProjectionType: "ALL"
+          ProvisionedThroughput:
+            ReadCapacityUnits: ${self:custom.tableThroughput}
+            WriteCapacityUnits: ${self:custom.tableThroughput}
+
+        # Use case
+        # - Find all content with a given image, by bucket
+        - IndexName: "GS2"
+          KeySchema:
+            - AttributeName: "gsiBucket"
+              KeyType: "HASH"
+            - AttributeName: "gsi2sk"
+              KeyType: "RANGE"
+          Projection:
+            ProjectionType: "ALL"
+          ProvisionedThroughput:
+            ReadCapacityUnits: ${self:custom.tableThroughput}
+            WriteCapacityUnits: ${self:custom.tableThroughput}
+
+        # Use case
+        # - Find all content by content reference (brand#series#program), by bucket
+        - IndexName: "GS3"
+          KeySchema:
+            - AttributeName: "gsiBucket"
+              KeyType: "HASH"
+            - AttributeName: "gsi3sk"
+              KeyType: "RANGE"
+          Projection:
+            ProjectionType: "ALL"
+          ProvisionedThroughput:
+            ReadCapacityUnits: ${self:custom.tableThroughput}
+            WriteCapacityUnits: ${self:custom.tableThroughput}
+
+        # Use case
+        # - Find all events with by start time, by bucket
+        - IndexName: "GS4"
+          KeySchema:
+            - AttributeName: "gsiBucket"
+              KeyType: "HASH"
+            - AttributeName: "gsi4sk"
+              KeyType: "RANGE"
+          Projection:
+            ProjectionType: "ALL"
+          ProvisionedThroughput:
+            ReadCapacityUnits: ${self:custom.tableThroughput}
+            WriteCapacityUnits: ${self:custom.tableThroughput}
+
+        # Use case
+        # - Find all events by end time, by bucket
+        - IndexName: "GS5"
+          KeySchema:
+            - AttributeName: "gsiBucket"
+              KeyType: "HASH"
+            - AttributeName: "gsi5sk"
+              KeyType: "RANGE"
+          Projection:
+            ProjectionType: "ALL"
+          ProvisionedThroughput:
+            ReadCapacityUnits: ${self:custom.tableThroughput}
+            WriteCapacityUnits: ${self:custom.tableThroughput}
+
+        - IndexName: "GS6"
+          KeySchema:
+            - AttributeName: "gsiBucket"
+              KeyType: "HASH"
+            - AttributeName: "gsi6sk"
+              KeyType: "RANGE"
+          Projection:
+            ProjectionType: "ALL"
+          ProvisionedThroughput:
+            ReadCapacityUnits: ${self:custom.tableThroughput}
+            WriteCapacityUnits: ${self:custom.tableThroughput}
+
 Outputs:
-  FvcMdsStorageTableArn:
-    Description: The ARN for the User's Table
+  FvcDataStoreTableArn:
+    Description: The ARN for the core table
     Value:
-      "Fn::GetAtt": [ FvcMdsStorageTable, Arn ]
+      "Fn::GetAtt": [ FvcDataStoreTable, Arn ]
     Export:
-      Name: ${self:service}:${self:custom.stage}:UsersTableArn
+      Name: ${self:service}:${self:custom.stage}:FvcDataStoreTableArn

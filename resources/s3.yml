@@ -1,0 +1,10 @@
+Resources:
+  FailedPayloadsS3Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: ${self:custom.failedPayloadBucket}
+      LifecycleConfiguration:
+        Rules:
+          - Id: ${self:custom.failedPayloadBucket}-expiration
+            Status: Enabled
+            ExpirationInDays: 1

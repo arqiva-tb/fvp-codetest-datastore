@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TVAMain xmlns:type="tva2:ExtendedTVAMainType" xmlns:mpeg7="urn:tva:mpeg7:2008" xmlns:fv="urn:fvc:metadata:2014-07" xmlns:tva="urn:tva:metadata:2012" xmlns:tva2="urn:tva:metadata:extended:2012" xmlns="urn:tva:metadata:2012" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xml:lang="en">
+    <ProgramDescription>
+        <ProgramInformationTable>
+            <ProgramInformation xml:lang="en" programId="crid://www.example.tv/V2QDHGB">
+                <BasicDescription xsi:type="tva2:ExtendedContentDescriptionType">
+                    <ParentalGuidance>
+                        <mpeg7:ParentalRating href="urn:fvc:metadata:cs:ContentRatingCS:2014-07:no_parental_controls"/>
+                        <ExplanatoryText length="long"></ExplanatoryText>
+                    </ParentalGuidance>
+                    <Duration>PT0H25M0S</Duration>
+                </BasicDescription>
+                <DerivedFrom crid="crid://www.example.tv/programme/16523/C5165231515"/>
+            </ProgramInformation>
+        </ProgramInformationTable>
+        <GroupInformationTable>
+            <GroupInformation serviceIDRef="http://www.example.com/dtt/service/content_owning/example" groupId="crid://www.example.tv/programme/16523/C5165231515" xml:lang="en">
+                <GroupType value="programConcept" xsi:type="ProgramGroupTypeType"/>
+                <BasicDescription xsi:type="tva2:ExtendedContentDescriptionType">
+                    <Title type="main" xml:lang="en"><![CDATA[Thursday 21 February]]></Title>
+                    <Synopsis length="short"><![CDATA[Mark finds a surprising way to offload his emotions.]]></Synopsis>
+                    <Synopsis length="medium"><![CDATA[Mark finds a surprising way to offload his emotions. Callum tells Sonya that it was wrong to keep him in the dark. Bea grows suspicious of her new boss at the garage.]]></Synopsis>
+                    <Synopsis length="long"><![CDATA[Elly realises that Mark is bottling up his feelings about Sonya's illness, unaware that he has found a way to offload them. Callum tells Sonya that it was wrong to keep him in the dark. Bea discovers that Harry, the new boss at the garage, is turning away work.]]></Synopsis>
+                    <Keyword>australia</Keyword>
+                    <Keyword>aussie</Keyword>
+                    <Keyword>melbourne</Keyword>
+                    <Keyword>soap</Keyword>
+                    <Keyword>drama</Keyword>
+                    <Keyword>sun</Keyword>
+                    <Genre type="main" href="urn:fvc:metadata:cs:ContentSubjectCS:2014-07:8"/>
+                    <RelatedMaterial xsi:type="tva2:ExtendedRelatedMaterialType">
+                        <HowRelated href="urn:tva:metadata:cs:HowRelatedCS:2012:19"/>
+                        <Format href="urn:mpeg:mpeg7:cs:FileFormatCS:2001:1"/>
+                        <MediaLocator>
+                            <MediaUri>http://edna.example.com/example/assets/images/show/379030899/1920x1080.jpg</MediaUri>
+                        </MediaLocator>
+                    </RelatedMaterial>
+                </BasicDescription>
+                <MemberOf crid="crid://www.example.tv/series/16523" xsi:type="MemberOfType"/>
+            </GroupInformation>
+            <GroupInformation serviceIDRef="http://www.example.com/dtt/service/content_owning/example" groupId="crid://www.example.tv/series/16523" xml:lang="en">
+                <GroupType value="series" xsi:type="ProgramGroupTypeType"/>
+                <BasicDescription xsi:type="tva2:ExtendedContentDescriptionType">
+                    <Title type="main" xml:lang="en"><![CDATA[2019]]></Title>
+                    <Keyword>australia</Keyword>
+                    <Keyword>aussie</Keyword>
+                    <Keyword>melbourne</Keyword>
+                    <Keyword>soap</Keyword>
+                    <Keyword>drama</Keyword>
+                    <Keyword>sun</Keyword>
+                    <Genre type="main" href="urn:fvc:metadata:cs:ContentSubjectCS:2014-07:8"/>
+                    <RelatedMaterial xsi:type="tva2:ExtendedRelatedMaterialType">
+                        <HowRelated href="urn:tva:metadata:cs:HowRelatedCS:2012:19"/>
+                        <Format href="urn:mpeg:mpeg7:cs:FileFormatCS:2001:1"/>
+                        <MediaLocator>
+                            <MediaUri>http://edna.example.com/example/assets/images/show/379030899/1920x1080.jpg</MediaUri>
+                        </MediaLocator>
+                    </RelatedMaterial>
+                </BasicDescription>
+                <MemberOf crid="crid://www.example.tv/brand/379030899" xsi:type="MemberOfType"/>
+            </GroupInformation>
+            <GroupInformation serviceIDRef="http://www.example.com/dtt/service/content_owning/example" groupId="crid://www.example.tv/brand/379030899" xml:lang="en">
+                <GroupType value="brand" xsi:type="ProgramGroupTypeType"/>
+                <BasicDescription xsi:type="tva2:ExtendedContentDescriptionType">
+                    <Title type="main" xml:lang="en"><![CDATA[Neighbours]]></Title>
+                    <Synopsis length="short"><![CDATA[Share the daily drama of Erinsborough's famous Ramsay Street residents.]]></Synopsis>
+                    <Synopsis length="long"><![CDATA[It's a TV institution, an essential part of student life, and responsible for launching the careers of some of Australia's greatest exports: Neighbours brings you a daily slice of suburbia and a guilt-free excuse to twitch the curtains on some of the hottest names in soapland.]]></Synopsis>
+                    <Keyword>australia</Keyword>
+                    <Keyword>aussie</Keyword>
+                    <Keyword>melbourne</Keyword>
+                    <Keyword>soap</Keyword>
+                    <Keyword>drama</Keyword>
+                    <Keyword>sun</Keyword>
+                    <Genre type="main" href="urn:fvc:metadata:cs:ContentSubjectCS:2014-07:8"/>
+                    <RelatedMaterial xsi:type="tva2:ExtendedRelatedMaterialType">
+                        <HowRelated href="urn:tva:metadata:cs:HowRelatedCS:2012:19"/>
+                        <Format href="urn:mpeg:mpeg7:cs:FileFormatCS:2001:1"/>
+                        <MediaLocator>
+                            <MediaUri>http://edna.example.com/example/assets/images/show/379030899/1920x1080.jpg</MediaUri>
+                        </MediaLocator>
+                    </RelatedMaterial>
+                </BasicDescription>
+            </GroupInformation>
+        </GroupInformationTable>
+        <ProgramLocationTable>
+            <BroadcastEvent serviceIDRef="http://www.example.com/vp/dtt/service/linear/12928" xml:lang="en">
+                <Program crid="crid://www.example.tv/V2QDHGB"/>
+                <ProgramURL>dvb://233a..3280;BB63</ProgramURL>
+                <InstanceMetadataId>imi:www.example.tv/12928_C5165231515_315399789_1</InstanceMetadataId>
+                <PublishedStartTime>2019-02-21T15:00:00Z</PublishedStartTime>
+                <PublishedDuration>PT0H30M0S</PublishedDuration>
+            </BroadcastEvent>
+            <BroadcastEvent serviceIDRef="http://www.example.com/vp/dtt/service/linear/12928" xml:lang="en">
+                <Program crid="crid://www.example.tv/V2QDHGB"/>
+                <ProgramURL>dvb://233a..3280;BB69</ProgramURL>
+                <InstanceMetadataId>imi:www.example.tv/12928_C5165231515_315399831_1</InstanceMetadataId>
+                <PublishedStartTime>2019-02-21T18:00:00Z</PublishedStartTime>
+                <PublishedDuration>PT0H30M0S</PublishedDuration>
+            </BroadcastEvent>
+            <BroadcastEvent serviceIDRef="http://www.example.com/vp/dtt/service/linear/45200" xml:lang="en">
+                <Program crid="crid://www.example.tv/V2QDHGB"/>
+                <ProgramURL>dvb://233a..b090;9499</ProgramURL>
+                <InstanceMetadataId>imi:www.example.tv/45200_C5165231515_315399978_1</InstanceMetadataId>
+                <PublishedStartTime>2019-02-21T16:00:00Z</PublishedStartTime>
+                <PublishedDuration>PT0H30M0S</PublishedDuration>
+            </BroadcastEvent>
+            <BroadcastEvent serviceIDRef="http://www.example.com/vp/dtt/service/linear/45200" xml:lang="en">
+                <Program crid="crid://www.example.tv/V2QDHGB"/>
+                <ProgramURL>dvb://233a..b090;949F</ProgramURL>
+                <InstanceMetadataId>imi:www.example.tv/45200_C5165231515_315400020_1</InstanceMetadataId>
+                <PublishedStartTime>2019-02-21T19:00:00Z</PublishedStartTime>
+                <PublishedDuration>PT0H30M0S</PublishedDuration>
+            </BroadcastEvent>
+            <BroadcastEvent serviceIDRef="http://www.example.com/vp/dtt/service/linear/8500" xml:lang="en">
+                <Program crid="crid://www.example.tv/V2QDHGB"/>
+                <ProgramURL>dvb://233a..2134;C5B0</ProgramURL>
+                <InstanceMetadataId>imi:www.example.tv/8500_C5165231515_315400713_1</InstanceMetadataId>
+                <PublishedStartTime>2019-02-21T13:45:00Z</PublishedStartTime>
+                <PublishedDuration>PT0H30M0S</PublishedDuration>
+            </BroadcastEvent>
+            <BroadcastEvent serviceIDRef="http://www.example.com/vp/dtt/service/linear/17728" xml:lang="en">
+                <Program crid="crid://www.example.tv/V2QDHGB"/>
+                <ProgramURL>dvb://233a..4540;C5B0</ProgramURL>
+                <InstanceMetadataId>imi:www.example.tv/17728_C5165231515_315400713_3</InstanceMetadataId>
+                <PublishedStartTime>2019-02-21T13:45:00Z</PublishedStartTime>
+                <PublishedDuration>PT0H30M0S</PublishedDuration>
+            </BroadcastEvent>
+            <BroadcastEvent serviceIDRef="http://www.example.com/vp/dtt/service/linear/8500" xml:lang="en">
+                <Program crid="crid://www.example.tv/V2QDHGB"/>
+                <ProgramURL>dvb://233a..2134;C5B5</ProgramURL>
+                <InstanceMetadataId>imi:www.example.tv/8500_C5165231515_315400748_1</InstanceMetadataId>
+                <PublishedStartTime>2019-02-21T17:30:00Z</PublishedStartTime>
+                <PublishedDuration>PT0H30M0S</PublishedDuration>
+            </BroadcastEvent>
+            <BroadcastEvent serviceIDRef="http://www.example.com/vp/dtt/service/linear/17728" xml:lang="en">
+                <Program crid="crid://www.example.tv/V2QDHGB"/>
+                <ProgramURL>dvb://233a..4540;C5B5</ProgramURL>
+                <InstanceMetadataId>imi:www.example.tv/17728_C5165231515_315400748_3</InstanceMetadataId>
+                <PublishedStartTime>2019-02-21T17:30:00Z</PublishedStartTime>
+                <PublishedDuration>PT0H30M0S</PublishedDuration>
+            </BroadcastEvent>
+            <BroadcastEvent serviceIDRef="http://www.example.com/vp/dtt/service/linear/16112" xml:lang="en">
+                <Program crid="crid://www.example.tv/V2QDHGB"/>
+                <ProgramURL>dvb://233a..3ef0;20A6</ProgramURL>
+                <InstanceMetadataId>imi:www.example.tv/16112_C5165231515_315404997_1</InstanceMetadataId>
+                <PublishedStartTime>2019-02-24T10:25:00Z</PublishedStartTime>
+                <PublishedDuration>PT0H30M0S</PublishedDuration>
+            </BroadcastEvent>
+            <OnDemandProgram serviceIDRef="http://www.example.com/application/ondemand/demand5" xml:lang="en">
+                <Program crid="crid://www.example.tv/V2QDHGB"/>
+                <ProgramURL contentType="application/vnd.dvb.ait+xml"><![CDATA[https://cassie-auth.example.com/freeviewplay/ait/C5165231515.xml]]></ProgramURL>
+                <InstanceMetadataId>imi:www.example.tv/request:C5165231515</InstanceMetadataId>
+                <InstanceDescription>
+                    <Genre href="urn:fvc:metadata:cs:MediaAvailabilityCS:2014-07:media_available"/>
+                    <AVAttributes>
+                        <CaptioningAttributes>
+                            <Coding href="urn:tva:metadata:cs:CaptionCodingFormatCS:2010:2.1"/>
+                        </CaptioningAttributes>
+                    </AVAttributes>
+                </InstanceDescription>
+                <PublishedDuration>PT0H25M0S</PublishedDuration>
+                <StartOfAvailability>2019-02-21T13:45:00Z</StartOfAvailability>
+                <EndOfAvailability>2019-03-23T14:15:00Z</EndOfAvailability>
+                <Free value="true"/>
+                <AuxiliaryURL contentType="application/vnd.dvb.ait+xml"><![CDATA[https://cassie-auth.example.com/freeviewplay/ait/template.xml]]></AuxiliaryURL>
+            </OnDemandProgram>
+        </ProgramLocationTable>
+    </ProgramDescription>
+</TVAMain>

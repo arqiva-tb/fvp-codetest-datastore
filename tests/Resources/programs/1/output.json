@@ -1,0 +1,62 @@
+{
+  "persisted": [
+    {
+      "pk": "dvb://233a..2134;C62A",
+      "sk": "BCAST_0a03_TVA",
+      "gsi1pk": "http://www.example.com/vp/dtt/service/linear/8500",
+      "gsiBucket": 1,
+      "gsi2sk": "http://edna.example.com/example/assets/images/default/example/1920x1080.jpg",
+      "gsi3sk": "crid://www.example.tv/brand/3271776213#crid://www.example.tv/series/21034#crid://www.example.tv/programme/21034/C5210340016",
+      "gsi4sk": "1550637900",
+      "gsi5sk": "1550639400",
+      "titles": {
+        "LONG": "Clutter & Red Flag Compilation"
+      },
+      "crids": {
+        "TVA": "crid://www.example.tv/V3H8BE8",
+        "DVB": "dvb://233a..2134;C62A"
+      },
+      "startTime": 1550637900,
+      "endTime": 1550639400
+    },
+    {
+      "pk": "dvb://233a..4540;C62A",
+      "sk": "BCAST_0a03_TVA",
+      "gsi1pk": "http://www.example.com/vp/dtt/service/linear/17728",
+      "gsiBucket": 1,
+      "gsi2sk": "http://edna.example.com/example/assets/images/default/example/1920x1080.jpg",
+      "gsi3sk": "crid://www.example.tv/brand/3271776213#crid://www.example.tv/series/21034#crid://www.example.tv/programme/21034/C5210340016",
+      "gsi4sk": "1550637900",
+      "gsi5sk": "1550639400",
+      "titles": {
+        "LONG": "Clutter & Red Flag Compilation"
+      },
+      "crids": {
+        "TVA": "crid://www.example.tv/V3H8BE8",
+        "DVB": "dvb://233a..4540;C62A"
+      },
+      "startTime": 1550637900,
+      "endTime": 1550639400
+    },
+    {
+      "pk": "crid://www.example.tv/brand/3271776213",
+      "sk": "BRAND",
+      "gsiBucket": 1,
+      "gsi2sk": "http://edna.example.com/example/assets/images/default/example/1920x1080.jpg",
+      "titles": {
+        "LONG": "Clutter & Red Flag Compilation"
+      },
+      "synopses": {}
+    },
+    {
+      "pk": "crid://www.example.tv/series/21034",
+      "sk": "SERIES",
+      "gsiBucket": 1,
+      "gsi2sk": "http://edna.example.com/example/assets/images/default/example/1920x1080.jpg",
+      "titles": {
+        "LONG": "Clutter & Red Flag Compilation"
+      },
+      "synopses": {}
+    }
+  ]
+}
