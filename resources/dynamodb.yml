@@ -35,7 +35,8 @@ Resources:
           AttributeType: "S"
         - AttributeName: "gsi6sk"
           AttributeType: "S"
-
+        - AttributeName: "startTime"
+          AttributeType: "N"
       KeySchema:
         - AttributeName: "pk"
           KeyType: "HASH"
@@ -121,6 +122,18 @@ Resources:
             - AttributeName: "gsiBucket"
               KeyType: "HASH"
             - AttributeName: "gsi6sk"
+              KeyType: "RANGE"
+          Projection:
+            ProjectionType: "ALL"
+          ProvisionedThroughput:
+            ReadCapacityUnits: ${self:custom.tableThroughput}
+            WriteCapacityUnits: ${self:custom.tableThroughput}
+
+        - IndexName: "GS7"
+          KeySchema:
+            - AttributeName: "gsiBucket"
+              KeyType: "HASH"
+            - AttributeName: "startTime"
               KeyType: "RANGE"
           Projection:
             ProjectionType: "ALL"

@@ -1,12 +1,14 @@
 import {DynamoDB} from "aws-sdk";
-import {IRecord} from "./IMdsTypes";
+import {IRecord, IBroadcastProgram} from "./IMdsTypes";
+import { resolve } from "path";
 
 export interface IDatastore {
     persist(records: IRecord[]): Promise<IRecord[]>;
+    queryByTimeFrame(startTime: number, endTime: number): Promise<IBroadcastProgram[]>;
 }
 
 /**
- * This class provides a simple mechanism for persisting MDS IRecords to Dynamo.
+ * This class provides a simple mechanism for persisting/quering MDS IRecords to Dynamo.
  */
 export class DynamoDBDatastore implements IDatastore {
 
@@ -16,6 +18,7 @@ export class DynamoDBDatastore implements IDatastore {
 
     constructor(db: DynamoDB) {
         this.client = db;
+        db.query()
     }
 
     /**
@@ -69,6 +72,40 @@ export class DynamoDBDatastore implements IDatastore {
                     console.error(e);
                     reject(e);
                 });
+        });
+    }
+
+    /**
+     * Query records from DynamoDb with startTime in the provided time frame.
+     *
+     * @param startTime
+     * @param endTime
+     */
+    queryByTimeFrame(startTime: number, endTime: number): Promise<IBroadcastProgram []> {
+        // Build query params
+        const params = {
+            ExpressionAttributeValues: {
+                ":s": { N: startTime.toString() },
+                ":e": { N: endTime.toString() },
+                ":g": { N: "1" },
+            },
+            KeyConditionExpression: "gsiBucket = :g and startTime BETWEEN :s and  :e",
+            TableName: this.tableName,
+            IndexName: "GS7",
+        };
+        return  new Promise((resolve, reject) => {
+            this.client.query(params, function(err, data) {
+                if (err) {
+                    console.error("Failed to query from DynamoDB, error: ", err);
+                    reject(err);
+                } else {
+                    // Remove the type from the items 
+                    const mappedItems: IBroadcastProgram[] = (data.Items || []).map(item => {
+                        return DynamoDB.Converter.unmarshall(item) as IBroadcastProgram;
+                    });
+                    resolve(mappedItems);
+                }
+            });
         });
     }
 

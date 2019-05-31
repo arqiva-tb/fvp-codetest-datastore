@@ -3,7 +3,7 @@ service: fvp-datastore-test
 provider:
   name: aws
   runtime: nodejs8.10
-  region: eu-west-2
+  region:  eu-west-2
   memorySize: 128
 
   environment:
@@ -23,6 +23,8 @@ provider:
       # Restrict our IAM role permissions to the specific table for the stage
       Resource:
         - "Fn::GetAtt": [ FvcDataStoreTable, Arn ]
+        - { "Fn::Join": [ "/", [ 
+          { "Fn::GetAtt": [ FvcDataStoreTable, Arn ] }, "index", "GS7" ]]}
     - Effect: "Allow"
       Action:
         - "s3:PutObject"
@@ -114,7 +116,6 @@ custom:
   prune:
     automatic: true
     number: 5
-
 resources:
   - ${file(resources/dynamodb.yml)}
   - ${file(resources/s3.yml)}
