@@ -1,20 +1,19 @@
+import { HttpStatusCodes } from '../Enum/HttpStatusCode';
 import { IImageType, ILaunchUrl, IImage } from '../Datastore/IMdsTypes';
 import { IBroadcastProgram, ICridType } from '../Datastore/IMdsTypes';
-import { ITitle } from './../Tva/ITvaTypes';
+import { ITitle } from '../Tva/ITvaTypes';
 import { DataHandler } from '../Datastore/DataHandler';
-import { HttpStatusCodes } from '../enum/HttpStatusCode';
-import {APIGatewayProxyEvent, Callback, Context} from "aws-lambda";
-import { IDatastore } from "../Datastore/Datastore";
+import { APIGatewayProxyEvent, Callback, Context } from "aws-lambda";
+import { IDatastore } from '../Datastore/Datastore';
 import { Errors } from '../enum/Errors';
-import moment = require('moment');
+import * as moment from "moment";
 
 const defaultTimeFrameValue = 6;
 
-
 /**
- * An interface representing schedule format
+ * An interface representing the program object 
  */
-export interface ISchedule{
+export interface IProgram {
     program_id: string;
     titles: ITitle[],
     launchUrls: ILaunchUrl[],
@@ -23,18 +22,27 @@ export interface ISchedule{
     endTime: string,
 }
 
+/**
+ * An interface representing the error to be returned in the response 
+ */
+export interface IError { 
+    errorDescription: string;
+}
 
 /**
  * This class will be used to handle Get Schedules Requests.
  */
 export class Api {
-    
+    /** We interact with the data source through the datahandler (Strategy pattern)*/
     private dataHandler: DataHandler;
+    /** The time frame to be used in the query programs from the data*/
     private timeFrameInHours: number = process.env.timeFrameInHours ? parseInt(process.env.timeFrameInHours, 10) : defaultTimeFrameValue;
-    private cachedValues: Map<string, any> = new Map();
+    /** We minimize calls to DataStore by caching data queried previously, 
+     * this is useful only when lambda is not in cold start */
+    private cachedValues: Map<string, IProgram[]> = new Map();
 
-    constructor(dataStore: IDatastore) {
-        // We interact with the data source through the datahandler (Strategy pattern)
+    /** Constructor */
+    constructor(dataStore: IDatastore) {    
         this.dataHandler = new DataHandler(dataStore);
     }
 
@@ -48,7 +56,7 @@ export class Api {
     public async onHttpGetSchedules(event: APIGatewayProxyEvent, context: Context, callback: Callback): Promise<void> {
         // Initializa some variables
         let statusCode: HttpStatusCodes = HttpStatusCodes.InternalServerError;
-        let body = null;
+        let result: IProgram[] | IError | undefined = undefined;
         try {
             // Read the start time 
             const startTime = event.queryStringParameters ? event.queryStringParameters.start_time : null;
@@ -58,29 +66,37 @@ export class Api {
                 statusCode = HttpStatusCodes.InvalidRequest;
                 throw new Error(startTime ? Errors.InvalidStartTime : Errors.StartTimeRequied);
             }
-            // Check whether the records have been recently cached
-            body = this.cachedValues.get(startTime); 
+            // Check whether the records have been recently queried
+            result = this.cachedValues.get(startTime); 
             // Get the records from the datasource if it is not cached
-            if (!body) {
-                // Convert the start time to number
+            if (!result) {
+                // Convert the start time to a number
                 const startTimeNumeric =  parseInt(startTime, 10);
                 // calculate the end time as the start time plus the time frame
                 const endTime= startTimeNumeric + this.timeFrameInHours * 3600;
                 // Query the records from the datasource
                 const rawRecords = await this.dataHandler.queryByTimeFrame(startTimeNumeric, endTime);
                 // Map the records to the required format
-                body = this.mapRawRecords(rawRecords);
-                statusCode = HttpStatusCodes.Success;
-                this.cachedValues.set(startTime, body);
-            }
-
+                result = this.mapRawRecords(rawRecords);
+                // Update the ched values
+                this.cachedValues.set(startTime, result);
+            }  
+            // Set the status code to success
+            statusCode = HttpStatusCodes.Success; 
         }
         catch(error) {
-            body = {
-               errorMessage: error.message
-            };
+            // Check whether it is an internal server error
+            const isInternalServerError = (statusCode === HttpStatusCodes.InternalServerError);
+            console.error(error);
+            result = {
+               errorDescription: isInternalServerError ? Errors.InternalServerError : error.message
+            } as IError;
         }
         finally {
+            const body = statusCode != HttpStatusCodes.Success ? result : {
+                success: true,
+                events: result
+            };
             callback(null, {
                 statusCode,
                 headers: {"Content-Type": "application/json"},
@@ -109,9 +125,9 @@ export class Api {
      * It maps the raw data fetched from DynamoDB into a format we need to return in the respons.
      * 
      * @param rawRecords
-     * @returns ISchedule[]
+     * @returns IProgram[]
      */
-    private mapRawRecords(rawRecords: IBroadcastProgram[]): ISchedule[] {
+    private mapRawRecords(rawRecords: IBroadcastProgram[]): IProgram[] {
         return rawRecords.map(item => {
             return {
                 program_id: item.pk,
@@ -125,8 +141,7 @@ export class Api {
                 }],
                 startTime: moment.unix(item.startTime).utc().format(),
                 endTime: moment.unix(item.endTime).utc().format(),
-            } as ISchedule
+            } as IProgram
         })
     }
-
 }

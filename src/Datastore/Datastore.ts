@@ -14,7 +14,8 @@ export class DynamoDBDatastore implements IDatastore {
 
     private client: DynamoDB;
     private batchPutSize: number = 25;
-    private tableName: string = process.env.tableName || "fvc-mds-storage-table";
+    private tableName: string = process.env.tableName || "fvp-datastore-test-dev-table";
+    private startTimeIndex: string = process.env.startTimeIndex || "GS7";
 
     constructor(db: DynamoDB) {
         this.client = db;
@@ -91,7 +92,7 @@ export class DynamoDBDatastore implements IDatastore {
             },
             KeyConditionExpression: "gsiBucket = :g and startTime BETWEEN :s and  :e",
             TableName: this.tableName,
-            IndexName: "GS7",
+            IndexName: this.startTimeIndex,
         };
         return  new Promise((resolve, reject) => {
             this.client.query(params, function(err, data) {
